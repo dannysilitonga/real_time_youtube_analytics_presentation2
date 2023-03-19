@@ -10,18 +10,18 @@
   <script>
 
     var treeData = {
-      name: 'A',
+      name: 'Python Back End',
       x0: window.diagram.height / 2,
       y0: 0,
       children: []
     };
 
     var _transitions = [
-      window.diagram.addItem('B', 'A', treeData),
+      window.diagram.addItem('JavaScript Front End', 'Python Back End', treeData),
     ];
 
     var _inverse_transitions = [
-      window.diagram.removeItem('B', treeData),
+      window.diagram.removeItem('Python Back End', treeData),
     ];
 
     // start the tree

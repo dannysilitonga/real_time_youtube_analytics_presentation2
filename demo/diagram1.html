@@ -18,24 +18,38 @@
   <script>
 
     var treeData = {
-      name: 'root',
-      x0: window.diagram.height / 2,
+      name: 'App',
+      x0: window.diagram.height /2,
       y0: 0,
       children: []
     };
 
     var _transitions = [
-      window.diagram.addItem('child 1', 'root', treeData),
-      window.diagram.addItem('child 2', 'root', treeData),
-      window.diagram.addItem('sub-child 1', 'child 1', treeData),
-      window.diagram.addItem('sub-child 2', 'child 1', treeData),
+      window.diagram.addItem('Backend Processing', 'App', treeData),
+      
+      window.diagram.addItem('Get Data', 'Backend Processing', treeData),
+      
+      window.diagram.addItem('Process Data', 'Get Data', treeData),
+      window.diagram.addItem('Create Sentiments', 'Process Data', treeData),
+      window.diagram.addItem('Output Data', 'Create Sentiments', treeData),
+
+      window.diagram.addItem('Front End Processing', 'App', treeData),
+      window.diagram.addItem('Top Video Viz', 'Front End Processing', treeData),
+      window.diagram.addItem('Sentiment Viz', 'Top Video Viz', treeData)
+      
+      
+
     ];
 
     var _inverse_transitions = [
-      window.diagram.removeItem('child 1', treeData),
-      window.diagram.removeItem('child 2', treeData),
-      window.diagram.removeItem('sub-child 1', treeData),
-      window.diagram.removeItem('sub-child 2', treeData),
+      window.diagram.removeItem('Sentiment Viz', treeData),
+      window.diagram.removeItem('Top Video Viz', treeData),
+      window.diagram.removeItem('Front End Processing', treeData),
+      window.diagram.removeItem('Output Data', treeData),
+      window.diagram.removeItem('Create Sentiments', treeData),
+      window.diagram.removeItem('Process Data', treeData),
+      window.diagram.removeItem('Get Data', treeData),
+      window.diagram.removeItem('Backend Processing', treeData),
     ];
 
     // start the tree
